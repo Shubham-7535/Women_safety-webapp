@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Haven - Women's Safety Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i>
+            <h1>Safe Haven</h1>
+        </div>
+        <button class="nav-toggle" id="navToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="sideNav">
+        <button class="nav-close" id="navClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#" data-page="contact"><i class="fas fa-envelope"></i> Contact Us</a></li>
+            <li><a href="#" data-page="laws"><i class="fas fa-gavel"></i> Safety Laws</a></li>
+            <li><a href="#" data-page="about"><i class="fas fa-info-circle"></i> About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section class="page active" id="home-page">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h2>Empowering Women Through Safety</h2>
+                <p>Safe Haven is dedicated to providing resources, tools, and support to ensure the safety and well-being of women everywhere. Together, we can create a safer world.</p>
+                <a href="#" class="btn" data-page="contact">Get Help Now</a>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <div class="feature-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Emergency Contacts</h3>
+                    <p>Quick access to emergency helplines and local authorities when you need them most.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Safe Routes</h3>
+                    <p>Find the safest routes for your commute with real-time safety alerts and updates.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Support</h3>
+                    <p>Connect with a supportive community and share experiences in a safe environment.</p>
+                </div>
+            </section>
+
+            <!-- SVG Illustrations -->
+            <div class="svg-container">
+                <div class="svg-item">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="#8a2be2" opacity="0.2"/>
+                        <path d="M30,30 L70,70 M70,30 L30,70" stroke="#8a2be2" stroke-width="8" stroke-linecap="round"/>
+                        <circle cx="50" cy="50" r="20" fill="#8a2be2"/>
+                        <path d="M45,50 L50,55 L55,45" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3>Safety First</h3>
+                    <p>Your security is our top priority</p>
+                </div>
+                <div class="svg-item">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="#ff69b4" opacity="0.2"/>
+                        <path d="M50,20 A30,30 0 1,1 50,80 A30,30 0 1,1 50,20 Z" fill="#ff69b4"/>
+                        <circle cx="50" cy="50" r="15" fill="white"/>
+                        <path d="M45,50 L50,55 L55,45" stroke="#ff69b4" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <h3>24/7 Support</h3>
+                    <p>Always available when you need us</p>
+                </div>
+                <div class="svg-item">
+                    <svg viewBox="0 0 100 100">
+                        <circle cx="50" cy="50" r="45" fill="#9370db" opacity="0.2"/>
+                        <path d="M30,40 L70,40 L70,70 L30,70 Z" fill="#9370db"/>
+                        <path d="M40,30 L60,30 L60,40 L40,40 Z" fill="#9370db"/>
+                        <rect x="35" y="45" width="30" height="20" rx="2" fill="white"/>
+                        <circle cx="45" cy="55" r="2" fill="#9370db"/>
+                        <circle cx="55" cy="55" r="2" fill="#9370db"/>
+                    </svg>
+                    <h3>Safe Spaces</h3>
+                    <p>Find secure locations near you</p>
+                </div>
+            </div>
+
+            <!-- Sketch Images -->
+            <div class="sketch-container">
+                <div class="sketch sketch-1">
+                    <i class="fas fa-female"></i>
+                </div>
+                <div class="sketch sketch-2">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="sketch sketch-3">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="sketch sketch-4">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+            </div>
+
+            <!-- Statistics Section -->
+            <section class="stats">
+                <h2>Crime Statistics Against Women</h2>
+                <div class="chart-container">
+                    <canvas id="crimeChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Safety Tips -->
+            <section class="safety-tips">
+                <div class="tip-card">
+                    <h3><i class="fas fa-walking"></i> While Walking</h3>
+                    <p>Stay in well-lit areas, be aware of your surroundings, and avoid using headphones at high volume.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-car"></i> While Driving</h3>
+                    <p>Keep doors locked, park in well-lit areas, and have your keys ready before approaching your vehicle.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-mobile-alt"></i> Digital Safety</h3>
+                    <p>Use privacy settings on social media, avoid sharing location in real-time, and use secure messaging apps.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-home"></i> At Home</h3>
+                    <p>Install security systems, don't open the door to strangers, and have emergency numbers handy.</p>
+                </div>
+            </section>
+        </section>
+
+        <!-- Contact Page -->
+        <section class="page" id="contact-page">
+            <div class="hero">
+                <h2>Contact Us</h2>
+                <p>We're here to help. Reach out to us with any questions, concerns, or requests for assistance.</p>
+            </div>
+
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="safety-tips">Safety Tips Request</option>
+                            <option value="emergency-help">Emergency Assistance</option>
+                            <option value="partnership">Partnership Inquiry</option>
+                            <option value="volunteer">Volunteer Opportunity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+
+            <div class="feature-card" style="margin-top: 3rem;">
+                <h3><i class="fas fa-info-circle"></i> Additional Contact Information</h3>
+                <p>If you need immediate assistance, please call our 24/7 helpline at <strong>1-800-555-HELP</strong>.</p>
+                <p>For non-emergency inquiries, you can also email us at <strong>support@safehaven.org</strong>.</p>
+                <p>Our office hours are Monday to Friday, 9:00 AM to 6:00 PM.</p>
+            </div>
+        </section>
+
+        <!-- Safety Laws Page -->
+        <section class="page" id="laws-page">
+            <div class="hero">
+                <h2>Women's Safety Laws</h2>
+                <p>Understanding your legal rights is crucial for protection and empowerment. Here are key laws that protect women in India.</p>
+            </div>
+
+            <div class="laws-container">
+                <div class="law-card">
+                    <h3><i class="fas fa-female"></i> The Protection of Women from Domestic Violence Act, 2005</h3>
+                    <p>This Act provides protection to women from domestic violence. It covers physical, emotional, sexual, and economic abuse.</p>
+                    <p><strong>Key Provisions:</strong> Protection orders, residence orders, monetary relief, and custody orders.</p>
+                </div>
+                <div class="law-card">
+                    <h3><i class="fas fa-user-shield"></i> The Sexual Harassment of Women at Workplace Act, 2013</h3>
+                    <p>This law aims to protect women from sexual harassment at their workplace.</p>
+                    <p><strong>Key Provisions:</strong> Mandatory Internal Complaints Committee, local complaints committee, and protection against false complaints.</p>
+                </div>
+                <div class="law-card">
+                    <h3><i class="fas fa-balance-scale"></i> The Criminal Law (Amendment) Act, 2013</h3>
+                    <p>Also known as the Nirbhaya Act, this law amended the Indian Penal Code after the 2012 Delhi gang rape case.</p>
+                    <p><strong>Key Provisions:</strong> Stricter punishments for sexual offenses, new offenses like acid attack and stalking.</p>
+                </div>
+                <div class="law-card">
+                    <h3><i class="fas fa-child"></i> The Prohibition of Child Marriage Act, 2006</h3>
+                    <p>This law prohibits the marriage of children (below 18 for girls, 21 for boys) in India.</p>
+                    <p><strong>Key Provisions:</strong> Child marriages are voidable, punishment for conducting child marriage.</p>
+                </div>
+                <div class="law-card">
+                    <h3><i class="fas fa-downturn"></i> The Dowry Prohibition Act, 1961</h3>
+                    <p>This law prohibits the giving or taking of dowry in India.</p>
+                    <p><strong>Key Provisions:</strong> Penalty for giving or taking dowry, penalty for demanding dowry.</p>
+                </div>
+                <div class="law-card">
+                    <h3><i class="fas fa-indian-rupee-sign"></i> The Equal Remuneration Act, 1976</h3>
+                    <p>This law provides for payment of equal remuneration to men and women workers for same work or work of similar nature.</p>
+                    <p><strong>Key Provisions:</strong> Prevention of discrimination in recruitment and service conditions.</p>
+                </div>
+            </div>
+
+            <div class="stats" style="margin-top: 3rem;">
+                <h2>Legal Helplines</h2>
+                <div class="safety-tips">
+                    <div class="tip-card">
+                        <h3><i class="fas fa-phone"></i> National Commission for Women</h3>
+                        <p>Helpline: <strong>011-26942369</strong></p>
+                        <p>Email: <strong>ncw@nic.in</strong></p>
+                    </div>
+                    <div class="tip-card">
+                        <h3><i class="fas fa-scale-balanced"></i> Legal Aid Services</h3>
+                        <p>Helpline: <strong>15100</strong></p>
+                        <p>Free legal assistance for women in need.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h3><i class="fas fa-handshake"></i> Women Helpline</h3>
+                        <p>All India: <strong>1091</strong></p>
+                        <p>24/7 emergency support for women.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section class="page" id="about-page">
+            <div class="hero">
+                <h2>About Safe Haven</h2>
+                <p>Learn more about our mission, vision, and the team behind Safe Haven.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To create a world where every woman feels safe, empowered, and supported through accessible resources, education, and community.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>A society free from gender-based violence where women can live, work, and thrive without fear.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Our Values</h3>
+                    <p>Empathy, empowerment, inclusivity, and action-driven solutions for women's safety and well-being.</p>
+                </div>
+            </div>
+
+            <div class="stats">
+                <h2>Our Impact</h2>
+                <div class="chart-container">
+                    <canvas id="impactChart"></canvas>
+                </div>
+            </div>
+
+            <div class="feature-card" style="margin-top: 3rem;">
+                <h3><i class="fas fa-history"></i> Our Story</h3>
+                <p>Safe Haven was founded in 2020 by a group of women who experienced firsthand the challenges of navigating safety concerns in daily life. What started as a small community initiative has grown into a nationwide platform serving thousands of women each month.</p>
+                <p>We partner with local authorities, NGOs, and community organizations to provide comprehensive safety solutions tailored to the unique needs of women across different regions and circumstances.</p>
+            </div>
+
+            <div class="safety-tips" style="margin-top: 3rem;">
+                <div class="tip-card">
+                    <h3><i class="fas fa-users"></i> Our Team</h3>
+                    <p>Our diverse team includes safety experts, counselors, legal advisors, and technology specialists all dedicated to our mission.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-handshake"></i> Partnerships</h3>
+                    <p>We collaborate with over 50 organizations nationwide to extend our reach and impact.</p>
+                </div>
+                <div class="tip-card">
+                    <h3><i class="fas fa-trophy"></i> Achievements</h3>
+                    <p>Recognized as "Best Women's Safety Initiative" by the National Safety Council in 2022.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> info@safehaven.org</p>
+                <p><i class="fas fa-phone"></i> +1 (800) 555-HELP</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Safety Street, Secure City</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#" data-page="home">Home</a>
+                <a href="#" data-page="laws">Safety Laws</a>
+                <a href="#" data-page="about">About Us</a>
+                <a href="#" data-page="contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Emergency Numbers</h3>
+                <div class="emergency-numbers">
+                    <h4>National Emergency Helpline</h4>
+                    <p>Women Helpline: 1091</p>
+                    <p>Police: 100</p>
+                    <p>Ambulance: 102</p>
+                    <p>Domestic Abuse: 181</p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Safe Haven. All rights reserved. | Dedicated to Women's Safety</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
